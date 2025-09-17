@@ -1,0 +1,203 @@
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: monospace;
+    list-style: none;
+    transition: 0.3s;
+    letter-spacing: 0.1rem;
+    font-weight: 900;
+}
+
+::selection{
+    color: white;
+    background-color: var(--main_color);
+}
+::-webkit-scrollbar{
+    display: none;
+}
+:root{
+    --bg: #121324;
+    --bg_2: #1a1c30;
+    --bg_3: #292e47;
+    --main_color: #2ca4ff;
+    --sh: 2px 3px 10px #0000005c;
+    --txt: white;
+}
+body{
+    background-color: var(--bg);
+    display: flex
+;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100dvh;
+    overflow: hidden;
+    padding: 3rem 0;
+    gap: 1.5rem;
+}
+.input_container{
+    display: flex
+;
+    width: 250px;
+    padding: 1rem 1.5rem;
+    align-items: baseline;
+    background-color: var(--bg_2);
+    position: relative;
+    justify-content: space-between;
+    border-radius: 7px;
+    box-shadow: var(--sh);
+
+}
+body > section{
+    width: 60%;
+}
+.input_container button{
+        background-color: var(--main_color);
+    color: white;
+    aspect-ratio: 1;
+    width: 30px;
+    font-size: 1rem;
+    border-radius: 3px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+.input_container button i{
+    transform: rotate(-90deg);
+}
+.input_container.active button i{
+        transform: rotate(0deg);
+}
+.input_container .country_choices{
+    appearance: none;
+    width: 100%;
+    height: 300px;
+    left: 0;
+    top: calc(100% + 10px);
+    position: absolute;
+    background-color: var(--bg_2);
+    padding: 1rem;
+    display: none;
+    flex-direction: column;
+    gap: 0.6rem;
+    border-radius: 6px;
+}
+.input_container.active .country_choices{
+    display: flex;
+}
+.country_choices input{
+    appearance: none;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--bg_3);
+    border-radius: 4px;
+    color: var(--txt);
+}
+::placeholder{
+    color: var(--txt);
+    opacity: 0.3;
+}
+.input_container .indicator{
+     color: var(--main_color);
+    font-size: 0.9rem;
+    text-wrap: nowrap;
+    flex: 1;
+    max-width: calc(100% - 35px);
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+}
+.input_container ul{
+        flex: 1;
+    overflow: auto;
+    display: flex
+;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.inputs{
+    display: flex
+;
+    justify-content: space-between;
+
+}
+
+.input_container li{
+    color: var(--txt);
+    opacity: 0.4;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+}
+.input_container li:hover{
+    background-color: var(--bg_3);
+}
+.cities.disabled{
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+.timings{
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.timings .prayer{
+    width: 100%;
+    height: 60px;
+    background-color: var(--bg_2);
+    box-shadow: var(--sh);
+    border-radius: 6px;
+    padding: 0 3rem;
+    display: flex
+;
+    color: var(--main_color);
+    justify-content: space-between;
+    overflow: hidden;
+    align-items: center;
+        text-shadow: 0 0 25px, 0 0 15px;
+
+}
+.prayer:hover{
+    background-color: var(--bg_3);
+}
+.prayer i{
+    color: attr(data-color);
+    width: 60px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.prayer:nth-child(1) { color: #4A6FA5; } /* Fajr */
+.prayer:nth-child(2) { color: #FFA726; } /* Sunrise */
+.prayer:nth-child(3) { color: #FFD54F; } /* Dhuhr */
+.prayer:nth-child(4) { color: #FFB74D; } /* Asr */
+.prayer:nth-child(5) { color: #EF6C00; } /* Maghrib */
+.prayer:nth-child(6) { color: #cfd5ff; } /* Isha */
+
+
+@media (max-width:900px) {
+    body > section{
+        width: 80%;
+    }
+}
+@media (max-width:630px) {
+    html{
+        font-size: 12px;
+    }
+    .input_container{
+        width: 48%;
+    }
+    .timings .prayer{
+        padding: 0 1.5rem;
+    }
+}
+@media (max-width:400px) {
+    body > section{
+        width: 90%;
+    }
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>OtakuHub</title>
+    <link rel="stylesheet" href="style/webfonts/all.min.css">
+    <link rel="stylesheet" href="style/webfonts/fontawesome.min.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="static/Font/font.css">
+    <link rel="icon" href="static/ST_brand/icon.png">
+
+</head>
+<body>
+
+    <section class="inputs">
+        <div class="input_container countries">
+            <p class="indicator">Country</p>
+            <button id="select_country" class="selectt"><i class="fa-regular fa-caret-down"></i></button>
+            <div class="country_choices">   
+                <input type="text" placeholder="Search.."> 
+                <ul class="list countries">
+                    <li data-value="Algeria">Algeria</li>
+                    <li data-value="Bahrain">Bahrain</li>
+                    <li data-value="Comoros">Comoros</li>
+                    <li data-value="Djibouti">Djibouti</li>
+                    <li data-value="Egypt">Egypt</li>
+                    <li data-value="Iraq">Iraq</li>
+                    <li data-value="Jordan">Jordan</li>
+                    <li data-value="Kuwait">Kuwait</li>
+                    <li data-value="Lebanon">Lebanon</li>
+                    <li data-value="Libya">Libya</li>
+                    <li data-value="Mauritania">Mauritania</li>
+                    <li data-value="Morocco">Morocco</li>
+                    <li data-value="Oman">Oman</li>
+                    <li data-value="Palestine">Palestine</li>
+                    <li data-value="Qatar">Qatar</li>
+                    <li data-value="Saudi Arabia">Saudi Arabia</li>
+                    <li data-value="Somalia">Somalia</li>
+                    <li data-value="Sudan">Sudan</li>
+                    <li data-value="Syria">Syria</li>
+                    <li data-value="Tunisia">Tunisia</li>
+                    <li data-value="United Arab Emirates">United Arab Emirates</li>
+                    <li data-value="Yemen">Yemen</li>
+                </ul>
+            </div>
+        </div>
+
+                <div class="input_container cities disabled">
+            <p class="indicator">City</p>
+            <button id="select_city" class="selectt"><i class="fa-regular fa-caret-down"></i></button>
+            <div class="country_choices ">   
+                <input type="text" placeholder="Search.."> 
+                <ul class="list">
+                    <!-- 🇩🇿 Algeria -->
+                    <li data-country="Algeria">Algiers</li>
+                    <li data-country="Algeria">Oran</li>
+                    <li data-country="Algeria">Constantine</li>
+
+                    <!-- 🇧🇭 Bahrain -->
+                    <li data-country="Bahrain">Manama</li>
+                    <li data-country="Bahrain">Muharraq</li>
+
+                    <!-- 🇰🇲 Comoros -->
+                    <li data-country="Comoros">Moroni</li>
+
+                    <!-- 🇩🇯 Djibouti -->
+                    <li data-country="Djibouti">Djibouti</li>
+
+                    <!-- 🇪🇬 Egypt -->
+                    <li data-country="Egypt">Cairo</li>
+                    <li data-country="Egypt">Alexandria</li>
+                    <li data-country="Egypt">Giza</li>
+                    <li data-country="Egypt">Shubra El-Kheima</li>
+
+                    <!-- 🇮🇶 Iraq -->
+                    <li data-country="Iraq">Baghdad</li>
+                    <li data-country="Iraq">Basra</li>
+                    <li data-country="Iraq">Mosul</li>
+
+                    <!-- 🇯🇴 Jordan -->
+                    <li data-country="Jordan">Amman</li>
+                    <li data-country="Jordan">Zarqa</li>
+
+                    <!-- 🇰🇼 Kuwait -->
+                    <li data-country="Kuwait">Kuwait City</li>
+
+                    <!-- 🇱🇧 Lebanon -->
+                    <li data-country="Lebanon">Beirut</li>
+                    <li data-country="Lebanon">Tripoli</li>
+
+                    <!-- 🇱🇾 Libya -->
+                    <li data-country="Libya">Tripoli</li>
+                    <li data-country="Libya">Benghazi</li>
+
+                    <!-- 🇲🇷 Mauritania -->
+                    <li data-country="Mauritania">Nouakchott</li>
+
+                    <!-- 🇲🇦 Morocco -->
+                    <li data-country="Morocco">Casablanca</li>
+                    <li data-country="Morocco">Rabat</li>
+                    <li data-country="Morocco">Marrakesh</li>
+
+                    <!-- 🇴🇲 Oman -->
+                    <li data-country="Oman">Muscat</li>
+                    <li data-country="Oman">Salalah</li>
+
+                    <!-- 🇵🇸 Palestine -->
+                    <li data-country="Palestine">Gaza</li>
+                    <li data-country="Palestine">Hebron</li>
+
+                    <!-- 🇶🇦 Qatar -->
+                    <li data-country="Qatar">Doha</li>
+
+                    <!-- 🇸🇦 Saudi Arabia -->
+                    <li data-country="Saudi Arabia">Riyadh</li>
+                    <li data-country="Saudi Arabia">Jeddah</li>
+                    <li data-country="Saudi Arabia">Mecca</li>
+                    <li data-country="Saudi Arabia">Medina</li>
+                    <li data-country="Saudi Arabia">Dammam</li>
+
+                    <!-- 🇸🇴 Somalia -->
+                    <li data-country="Somalia">Mogadishu</li>
+
+                    <!-- 🇸🇩 Sudan -->
+                    <li data-country="Sudan">Khartoum</li>
+                    <li data-country="Sudan">Omdurman</li>
+
+                    <!-- 🇸🇾 Syria -->
+                    <li data-country="Syria">Damascus</li>
+                    <li data-country="Syria">Aleppo</li>
+
+                    <!-- 🇹🇳 Tunisia -->
+                    <li data-country="Tunisia">Tunis</li>
+                    <li data-country="Tunisia">Sfax</li>
+
+                    <!-- 🇦🇪 UAE -->
+                    <li data-country="United Arab Emirates">Dubai</li>
+                    <li data-country="United Arab Emirates">Abu Dhabi</li>
+                    <li data-country="United Arab Emirates">Sharjah</li>
+
+                    <!-- 🇾🇪 Yemen -->
+                    <li data-country="Yemen">Sana'a</li>
+                    <li data-country="Yemen">Aden</li>
+                </ul>
+
+            </div>
+        </div>
+
+    </section>
+    <section class="timings">
+        <div class="prayer">
+            <i class="fa-regular fa-sun-haze" data-color="#4A6FA5"></i>
+            <p>Fajr</p>
+            <p class="time">--:-- -m</p>
+        </div>
+            <div class="prayer">
+            <i class="fa-regular fa-sunrise" data-color="#FFA726"></i>
+            <p>Sunrise</p>
+            <p class="time">--:-- -m</p>
+        </div>
+        <div class="prayer">
+            <i class="fa-regular fa-sun" data-color="#FFD54F"></i>
+            <p>Dhuhr</p>
+            <p class="time">--:-- -m</p>
+
+        </div>
+        <div class="prayer">
+            <i class="fa-regular fa-sun-bright" data-color="#FFB74D"></i>
+            <p>Asr</p>
+            <p class="time">--:-- -m</p>
+        </div>
+        <div class="prayer">
+            <i class="fa-regular fa-sunset" data-color="#EF6C00"></i>
+            <p>Maghrib</p>
+            <p class="time">--:-- -m</p>
+
+        </div>
+        <div class="prayer">
+            <i class="fa-regular fa-moon" data-color="#283593"></i>
+            <p>Isha</p>
+            <p class="time">--:-- -m</p>
+
+        </div>
+    </section>
+    <script src="javascript/main.js"></script>
+</body>
+</html>
