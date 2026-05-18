@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Al-Salah | Prayer Times</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="icon" href="static/ST_brand/icon.png">
+
+</head>
+<body>
+
+<header class="header">
+  <div class="header-icon">☽</div>
+  <h1>Al-Salah</h1>
+  <p class="header-sub">Prayer Times</p>
+  <p class="date-display" id="dateDisplay">—</p>
+</header>
+
+<div class="location-bar">
+
+  <div class="selector-wrap" id="countryWrap">
+    <p class="selector-label">Country</p>
+    <button class="selector-btn" id="countryBtn" aria-haspopup="listbox" aria-expanded="false">
+      <span class="btn-text" id="countryBtnText">Select country</span>
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="dropdown" id="countryDropdown" role="listbox">
+      <div class="dropdown-search"><input type="text" placeholder="Search country…" id="countrySearch" autocomplete="off"></div>
+      <ul class="dropdown-list" id="countryList"></ul>
+    </div>
+  </div>
+
+  <div class="selector-wrap disabled" id="cityWrap">
+    <p class="selector-label">City</p>
+    <button class="selector-btn" id="cityBtn" aria-haspopup="listbox" aria-expanded="false">
+      <span class="btn-text" id="cityBtnText">Select city</span>
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="dropdown" id="cityDropdown" role="listbox">
+      <div class="dropdown-search"><input type="text" placeholder="Search city…" id="citySearch" autocomplete="off"></div>
+      <ul class="dropdown-list" id="cityList"></ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="ornament">
+  <div class="ornament-line"></div>
+  <div class="ornament-diamond"></div>
+  <div class="ornament-line"></div>
+</div>
+
+<div class="prayers-grid" id="prayersGrid">
+
+  <div class="prayer-card" id="card-fajr" style="--card-color:#7ba7d6">
+    <div class="prayer-icon-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h1"/><path d="M20 13h1"/><path d="M5.6 6.6l.7.7"/><path d="M18.4 6.6l-.7.7"/><path d="M8 13a4 4 0 1 1 8 0"/><path d="M3 17h18"/><path d="M7 20h5"/><path d="M16 20h1"/><path d="M12 5v-1"/></svg>
+    </div>
+    <div class="prayer-info">
+      <p class="prayer-name">Fajr</p>
+      <p class="prayer-subtitle">Dawn prayer</p>
+    </div>
+    <p class="prayer-time" id="time-fajr">--:--</p>
+  </div>
+
+  <div class="prayer-card" id="card-sunrise" style="--card-color:#e8a84c">
+    <div class="prayer-icon-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h1m16 0h1m-15.4-6.4l.7.7m12.1-.7l-.7.7m-9.7 5.7a4 4 0 0 1 8 0"/><path d="M3 21l18 0"/><path d="M12 9v-6l3 3m-6 0l3-3"/></svg>
+    </div>
+    <div class="prayer-info">
+      <p class="prayer-name">Sunrise</p>
+      <p class="prayer-subtitle">Shuruq</p>
+    </div>
+    <p class="prayer-time" id="time-sunrise">--:--</p>
+  </div>
+
+  <div class="prayer-card" id="card-dhuhr" style="--card-color:#f0d060">
+    <div class="prayer-icon-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.828 14.828a4 4 0 1 0-5.656-5.656a4 4 0 0 0 5.656 5.656"/><path d="M6.343 17.657l-1.414 1.414"/><path d="M6.343 6.343l-1.414-1.414"/><path d="M17.657 6.343l1.414-1.414"/><path d="M17.657 17.657l1.414 1.414"/><path d="M4 12h-2"/><path d="M12 4v-2"/><path d="M20 12h2"/><path d="M12 20v2"/></svg>
+    </div>
+    <div class="prayer-info">
+      <p class="prayer-name">Dhuhr</p>
+      <p class="prayer-subtitle">Midday prayer</p>
+    </div>
+    <p class="prayer-time" id="time-dhuhr">--:--</p>
+  </div>
+
+  <div class="prayer-card" id="card-asr" style="--card-color:#e8904a">
+    <div class="prayer-icon-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0-8 0"/><path d="M4 12h.01"/><path d="M12 4v.01"/><path d="M20 12h.01"/><path d="M12 20v.01"/><path d="M6.31 6.31l-.01-.01"/><path d="M17.71 6.31l-.01-.01"/><path d="M17.7 17.7l.01.01"/><path d="M6.3 17.7l.01.01"/></svg>
+    </div>
+    <div class="prayer-info">
+      <p class="prayer-name">Asr</p>
+      <p class="prayer-subtitle">Afternoon prayer</p>
+    </div>
+    <p class="prayer-time" id="time-asr">--:--</p>
+  </div>
+
+  <div class="prayer-card" id="card-maghrib" style="--card-color:#d45a38">
+    <div class="prayer-icon-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h1m16 0h1m-15.4-6.4l.7.7m12.1-.7l-.7.7m-9.7 5.7a4 4 0 0 1 8 0"/><path d="M3 21l18 0"/><path d="M12 3v6l3-3m-6 0l3 3"/></svg>
+    </div>
+    <div class="prayer-info">
+      <p class="prayer-name">Maghrib</p>
+      <p class="prayer-subtitle">Sunset prayer</p>
+    </div>
+    <p class="prayer-time" id="time-maghrib">--:--</p>
+  </div>
+
+  <div class="prayer-card" id="card-isha" style="--card-color:#9a9de0">
+    <div class="prayer-icon-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1-8.313-12.454l0 .008"/><path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0-2 2a2 2 0 0 0-2-2a2 2 0 0 0 2-2"/><path d="M19 11h2m-1-1v2"/></svg>
+    </div>
+    <div class="prayer-info">
+      <p class="prayer-name">Isha</p>
+      <p class="prayer-subtitle">Night prayer</p>
+    </div>
+    <p class="prayer-time" id="time-isha">--:--</p>
+  </div>
+
+</div>
+
+<footer class="footer">Salah · Prayer Times · Aladhan API  · <a href="https://zeddy-portfolio.vercel.app/" target="_blank">Zeddy</a></footer>
+<script src="script/main.js"></script>
+</body>
+</html>
